@@ -4,12 +4,11 @@ public class MainClass {
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.addLast(56);
-        linkedList.addLast(70);
-        linkedList.insertBetween(56,70,30);
+        linkedList.sortedInsert(56);
+        linkedList.sortedInsert(30);
+        linkedList.sortedInsert(40);
+        linkedList.sortedInsert(70);
         linkedList.show();
-        linkedList.pop();
-        System.out.println();
-        linkedList.show();
+        System.out.println("Size = " +linkedList.getSize());
     }
 }
