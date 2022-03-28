@@ -11,5 +11,10 @@ public class MainClass {
         System.out.println();
         linkedList.insertAfterSearch(30,40);
         linkedList.show();
+        System.out.println("Size = " +linkedList.getSize());
+        System.out.println();
+        linkedList.deleteAfterSearch(40);
+        linkedList.show();
+        System.out.println("Size = " +linkedList.getSize());
     }
 }

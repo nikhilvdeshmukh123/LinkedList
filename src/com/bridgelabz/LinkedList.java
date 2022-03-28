@@ -46,7 +46,6 @@ public class LinkedList {
             System.out.println("List is empty");
             return;
         }
-
         Node currNode = head;
         while (currNode.data != element1 || currNode.next.data != element2) {
             if (currNode.next.next == null) {
@@ -60,6 +59,7 @@ public class LinkedList {
             currNode.next = newNode;
             newNode.next = temp;
         }
+        size++;
     }
 
     public void pop(){
@@ -68,6 +68,7 @@ public class LinkedList {
             return;
         }
         head = head.next;
+        size--;
     }
 
     public void popLast(){
@@ -86,6 +87,7 @@ public class LinkedList {
             secondLast = secondLast.next;
         }
         secondLast.next = null;
+        size--;
     }
 
     public boolean searchNode(int data) {
@@ -115,5 +117,26 @@ public class LinkedList {
             currNode.next = node1;
             node1.next = temp;
         }
+        size++;
+    }
+
+    public void deleteAfterSearch(int data) {
+        if(searchNode(data)) {
+            if(head.data == data) {
+                head = head.next;
+                return;
+            }
+            Node currNode = head;
+            while(currNode.next.data != data) {
+                currNode = currNode.next;
+            }
+            Node temp = currNode.next.next;
+            currNode.next = temp;
+        }
+        size--;
+    }
+    public int getSize() {
+        System.out.println();
+        return size;
     }
 }
