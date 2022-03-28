@@ -4,13 +4,9 @@ public class MainClass {
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.head = new Node(56);
-        Node second = new Node(30);
-        Node third = new Node(70);
-
-        linkedList.head.next = second;
-        second.next = third;
-
+        linkedList.addFirst(70);
+        linkedList.addFirst(30);
+        linkedList.addFirst(56);
         linkedList.show();
     }
 }
