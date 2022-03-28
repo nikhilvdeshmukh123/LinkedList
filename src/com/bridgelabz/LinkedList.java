@@ -39,4 +39,25 @@ public class LinkedList {
             temp = temp.next;
         }
     }
+
+    public void insertBetween(int element1, int element2, int data) {
+        if (head == null || head.next == null) {
+            System.out.println("List is empty");
+        }
+
+        Node currNode = head;
+        while (currNode.data != element1 || currNode.next.data != element2) {
+            if (currNode.next.next == null) {
+                break;
+            }
+            currNode = currNode.next;
+        }
+        if (currNode.data == element1 && currNode.next.data == element2) {
+            Node newNode = new Node(data);
+            Node temp = currNode.next;
+            currNode.next = newNode;
+            newNode.next = temp;
+        }
+    }
+
 }
