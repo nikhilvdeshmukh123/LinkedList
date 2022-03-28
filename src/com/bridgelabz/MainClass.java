@@ -8,5 +8,8 @@ public class MainClass {
         linkedList.addLast(70);
         linkedList.insertBetween(56,70,30);
         linkedList.show();
+        linkedList.pop();
+        System.out.println();
+        linkedList.show();
     }
 }
