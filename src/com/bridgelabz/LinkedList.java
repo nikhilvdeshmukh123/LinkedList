@@ -33,6 +33,7 @@ public class LinkedList {
         Node temp = head;
         if(head == null) {
             System.out.println("List is empty");
+            return;
         }
         while(temp != null){
             System.out.print(temp.data+" ");
@@ -43,6 +44,7 @@ public class LinkedList {
     public void insertBetween(int element1, int element2, int data) {
         if (head == null || head.next == null) {
             System.out.println("List is empty");
+            return;
         }
 
         Node currNode = head;
@@ -63,7 +65,26 @@ public class LinkedList {
     public void pop(){
         if(head == null){
             System.out.println("List is empty");
+            return;
         }
         head = head.next;
+    }
+
+    public void popLast(){
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
+        if(head.next == null){
+            head = null;
+            return;
+        }
+        Node secondLast = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null){
+            lastNode = lastNode.next;
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
     }
 }
