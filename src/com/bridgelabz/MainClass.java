@@ -11,5 +11,7 @@ public class MainClass {
         linkedList.popLast();
         System.out.println();
         linkedList.show();
+        System.out.println();
+        linkedList.searchNode(30);
     }
 }
